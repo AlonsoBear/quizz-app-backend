@@ -1,0 +1,16 @@
+FROM node:18
+
+WORKDIR /code
+
+COPY package*.json /code/
+
+RUN npm ci 
+
+COPY ./src /code/src
+COPY ./tsconfig.json /code/
+
+RUN npm run build
+
+EXPOSE 5000
+
+CMD [ "node", "./dist/main.js" ]

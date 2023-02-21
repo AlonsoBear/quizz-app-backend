@@ -10,4 +10,4 @@ COPY . /code/
 
 EXPOSE 5000
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "/code/dist/main.js" ]
